@@ -1,0 +1,238 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FBF942915B8B5FE006B62CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBF942815B8B5FE006B62CE /* Foundation.framework */; };
+		1FBF942C15B8B5FE006B62CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF942B15B8B5FE006B62CE /* main.m */; };
+		1FBF943015B8B5FE006B62CE /* AVRTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FBF942F15B8B5FE006B62CE /* AVRTest.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FBF942215B8B5FE006B62CE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				1FBF943015B8B5FE006B62CE /* AVRTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1FBF942415B8B5FE006B62CE /* AVRTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FBF942815B8B5FE006B62CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FBF942B15B8B5FE006B62CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1FBF942E15B8B5FE006B62CE /* AVRTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVRTest-Prefix.pch"; sourceTree = "<group>"; };
+		1FBF942F15B8B5FE006B62CE /* AVRTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AVRTest.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FBF942115B8B5FE006B62CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBF942915B8B5FE006B62CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FBF941915B8B5FE006B62CE = {
+			isa = PBXGroup;
+			children = (
+				1FBF942A15B8B5FE006B62CE /* AVRTest */,
+				1FBF942715B8B5FE006B62CE /* Frameworks */,
+				1FBF942515B8B5FE006B62CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FBF942515B8B5FE006B62CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF942415B8B5FE006B62CE /* AVRTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FBF942715B8B5FE006B62CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF942815B8B5FE006B62CE /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FBF942A15B8B5FE006B62CE /* AVRTest */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF942B15B8B5FE006B62CE /* main.m */,
+				1FBF942F15B8B5FE006B62CE /* AVRTest.1 */,
+				1FBF942D15B8B5FE006B62CE /* Supporting Files */,
+			);
+			path = AVRTest;
+			sourceTree = "<group>";
+		};
+		1FBF942D15B8B5FE006B62CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF942E15B8B5FE006B62CE /* AVRTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FBF942315B8B5FE006B62CE /* AVRTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FBF943315B8B5FE006B62CE /* Build configuration list for PBXNativeTarget "AVRTest" */;
+			buildPhases = (
+				1FBF942015B8B5FE006B62CE /* Sources */,
+				1FBF942115B8B5FE006B62CE /* Frameworks */,
+				1FBF942215B8B5FE006B62CE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AVRTest;
+			productName = AVRTest;
+			productReference = 1FBF942415B8B5FE006B62CE /* AVRTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FBF941B15B8B5FE006B62CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Stryker;
+			};
+			buildConfigurationList = 1FBF941E15B8B5FE006B62CE /* Build configuration list for PBXProject "AVRTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1FBF941915B8B5FE006B62CE;
+			productRefGroup = 1FBF942515B8B5FE006B62CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FBF942315B8B5FE006B62CE /* AVRTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FBF942015B8B5FE006B62CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBF942C15B8B5FE006B62CE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1FBF943115B8B5FE006B62CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1FBF943215B8B5FE006B62CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FBF943415B8B5FE006B62CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FBF943515B8B5FE006B62CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FBF941E15B8B5FE006B62CE /* Build configuration list for PBXProject "AVRTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FBF943115B8B5FE006B62CE /* Debug */,
+				1FBF943215B8B5FE006B62CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FBF943315B8B5FE006B62CE /* Build configuration list for PBXNativeTarget "AVRTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FBF943415B8B5FE006B62CE /* Debug */,
+				1FBF943515B8B5FE006B62CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FBF941B15B8B5FE006B62CE /* Project object */;
+}
