@@ -1,5 +1,5 @@
 //
-//  main.m
+//  AVRTest.h
 //
 // Copyright 2012 Jeffrey Hutchison
 //
@@ -16,17 +16,13 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "AVRTest.h"
+#import "AVRConnection.h"
 
-static AVRTest *tester;
 
-int main(int argc, const char * argv[]) {
-
-    @autoreleasepool {
-        tester = [[AVRTest alloc] init];
-        [tester start];
-        dispatch_main();        
-    }
-    return 0;
+@interface AVRTest : NSObject <AVRDelegate> {
+    @private
+    AVRConnection *_connection;
 }
 
+- (void) start;
+@end

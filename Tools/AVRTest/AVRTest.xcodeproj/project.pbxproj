@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FA5D08D15BDDB62001C5B09 /* AVRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5D08C15BDDB62001C5B09 /* AVRConnection.m */; };
+		1FA5D09015BDF28C001C5B09 /* AVRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5D08F15BDF28C001C5B09 /* AVRTest.m */; };
 		1FBF942915B8B5FE006B62CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBF942815B8B5FE006B62CE /* Foundation.framework */; };
 		1FBF942C15B8B5FE006B62CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF942B15B8B5FE006B62CE /* main.m */; };
 		1FBF943015B8B5FE006B62CE /* AVRTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FBF942F15B8B5FE006B62CE /* AVRTest.1 */; };
@@ -26,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1FA5D08B15BDDB62001C5B09 /* AVRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRConnection.h; sourceTree = "<group>"; };
+		1FA5D08C15BDDB62001C5B09 /* AVRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRConnection.m; sourceTree = "<group>"; };
+		1FA5D08E15BDF28C001C5B09 /* AVRTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRTest.h; sourceTree = "<group>"; };
+		1FA5D08F15BDF28C001C5B09 /* AVRTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRTest.m; sourceTree = "<group>"; };
 		1FBF942415B8B5FE006B62CE /* AVRTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBF942815B8B5FE006B62CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FBF942B15B8B5FE006B62CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,9 +51,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA5D08915BDDB38001C5B09 /* AVRConnect */ = {
+			isa = PBXGroup;
+			children = (
+				1FA5D08B15BDDB62001C5B09 /* AVRConnection.h */,
+				1FA5D08C15BDDB62001C5B09 /* AVRConnection.m */,
+			);
+			name = AVRConnect;
+			path = ../../AVRConnect;
+			sourceTree = "<group>";
+		};
 		1FBF941915B8B5FE006B62CE = {
 			isa = PBXGroup;
 			children = (
+				1FA5D08915BDDB38001C5B09 /* AVRConnect */,
 				1FBF942A15B8B5FE006B62CE /* AVRTest */,
 				1FBF942715B8B5FE006B62CE /* Frameworks */,
 				1FBF942515B8B5FE006B62CE /* Products */,
@@ -76,6 +93,8 @@
 				1FBF942B15B8B5FE006B62CE /* main.m */,
 				1FBF942F15B8B5FE006B62CE /* AVRTest.1 */,
 				1FBF942D15B8B5FE006B62CE /* Supporting Files */,
+				1FA5D08E15BDF28C001C5B09 /* AVRTest.h */,
+				1FA5D08F15BDF28C001C5B09 /* AVRTest.m */,
 			);
 			path = AVRTest;
 			sourceTree = "<group>";
@@ -115,7 +134,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = Stryker;
+				ORGANIZATIONNAME = "Jeff Hutchison";
 			};
 			buildConfigurationList = 1FBF941E15B8B5FE006B62CE /* Build configuration list for PBXProject "AVRTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -140,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBF942C15B8B5FE006B62CE /* main.m in Sources */,
+				1FA5D08D15BDDB62001C5B09 /* AVRConnection.m in Sources */,
+				1FA5D09015BDF28C001C5B09 /* AVRTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

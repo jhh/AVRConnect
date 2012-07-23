@@ -1,5 +1,5 @@
 //
-//  main.m
+//  AVRTest.h
 //
 // Copyright 2012 Jeffrey Hutchison
 //
@@ -15,18 +15,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <Foundation/Foundation.h>
 #import "AVRTest.h"
+#import "AVRConnection.h"
 
-static AVRTest *tester;
-
-int main(int argc, const char * argv[]) {
-
-    @autoreleasepool {
-        tester = [[AVRTest alloc] init];
-        [tester start];
-        dispatch_main();        
-    }
-    return 0;
+@implementation AVRTest
+- (void) start {
+    _connection = [[AVRConnection alloc] initWithDelegate:self host:@"10.0.1.2"];
+    [_connection sendPowerQuery];
 }
 
+- (void) connection:(AVRConnection *)connection didReceiveEvent:(NSString *)event {
+    NSLog(@"event: %@", event);
+}
+@end
