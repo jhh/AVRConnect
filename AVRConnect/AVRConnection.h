@@ -26,19 +26,20 @@
 
 @interface AVRConnection : NSObject {
     @private
-    __weak id<AVRDelegate> _delegate;
-    NSString *_host;
-    NSUInteger _port;
     dispatch_data_t _carry;
     dispatch_io_t _channel;
+    dispatch_source_t _timer;
 }
 
-@property (nonatomic, weak) id<AVRDelegate> delegate;
-@property (nonatomic, readonly) NSString *host;
-@property (nonatomic, readonly) NSUInteger port;
+@property (weak) id<AVRDelegate> delegate;
+@property dispatch_queue_t delegateQueue;
+@property dispatch_queue_t socketQueue;
 
-- (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host;
-- (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host port:(NSUInteger)port;
+- (id) initWithDelegate:(id<AVRDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
+
+- (BOOL) connectToHost:(NSString *)host error:(NSError **)error;
+- (BOOL) connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)error;
+
 - (void) sendPowerQuery;
 
 @end

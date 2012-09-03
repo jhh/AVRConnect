@@ -19,8 +19,18 @@
 #import "AVRConnection.h"
 
 @implementation AVRTest
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        self.host = @"10.0.1.2";
+    }
+    return self;
+}
+
 - (void) start {
-    _connection = [[AVRConnection alloc] initWithDelegate:self host:@"10.0.1.2"];
+    _connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(0, 0)];
+    [_connection connectToHost:self.host error:nil];
     [_connection sendPowerQuery];
 }
 

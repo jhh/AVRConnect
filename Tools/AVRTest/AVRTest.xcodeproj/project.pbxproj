@@ -11,21 +11,7 @@
 		1FA5D09015BDF28C001C5B09 /* AVRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5D08F15BDF28C001C5B09 /* AVRTest.m */; };
 		1FBF942915B8B5FE006B62CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBF942815B8B5FE006B62CE /* Foundation.framework */; };
 		1FBF942C15B8B5FE006B62CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF942B15B8B5FE006B62CE /* main.m */; };
-		1FBF943015B8B5FE006B62CE /* AVRTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FBF942F15B8B5FE006B62CE /* AVRTest.1 */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1FBF942215B8B5FE006B62CE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-				1FBF943015B8B5FE006B62CE /* AVRTest.1 in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1FA5D08B15BDDB62001C5B09 /* AVRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRConnection.h; sourceTree = "<group>"; };
@@ -116,7 +102,6 @@
 			buildPhases = (
 				1FBF942015B8B5FE006B62CE /* Sources */,
 				1FBF942115B8B5FE006B62CE /* Frameworks */,
-				1FBF942215B8B5FE006B62CE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -188,7 +173,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -209,7 +194,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -219,6 +204,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				INSTALL_PATH = /bin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -228,6 +214,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				INSTALL_PATH = /bin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
