@@ -24,14 +24,13 @@
 
 #define TELNET_PORT 23
 
-@interface AVRConnection (PrivateMethods)
+@interface AVRConnection ()
 - (dispatch_fd_t) _fileDescriptor;
 - (void) _processData:(dispatch_data_t) data;
 @end
 
 @implementation AVRConnection
 
-@synthesize host=_host, port=_port, delegate=_delegate;
 
 #pragma mark Initializers
 
@@ -54,7 +53,6 @@
         dispatch_io_read(_channel, 0, SIZE_MAX, dispatch_get_global_queue(0, 0), ^(bool done, dispatch_data_t data, int error) {
             if(data) {
                 [self _processData:data];
-                dispatch_release(data);
             }
             if(error) NSLog(@"READ ERROR!!!");
             if(done) NSLog(@"DONE!!!");
@@ -65,13 +63,15 @@
 
 #pragma mark Utility Methods
 - (void) sendPowerQuery {
+    NSLog(@"sendPowerQuery");
     const char *command_buf = "PW?\r";
     dispatch_data_t command = dispatch_data_create(command_buf, strlen(command_buf), dispatch_get_global_queue(0, 0), DISPATCH_DATA_DESTRUCTOR_DEFAULT);
     
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
     dispatch_time_t now = dispatch_walltime(DISPATCH_TIME_NOW, 0);
-    dispatch_source_set_timer(timer, now, 30ull*NSEC_PER_SEC, 1ull*NSEC_PER_SEC);
+    dispatch_source_set_timer(timer, now, 10ull*NSEC_PER_SEC, 1ull*NSEC_PER_SEC);
     dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"sendPowerQuery block");
         dispatch_io_write(_channel, 0, command, dispatch_get_global_queue(0, 0), ^(bool done, dispatch_data_t data, int error) {
             if(error) NSLog(@"WRITE ERROR!!!");
         });
@@ -126,8 +126,6 @@
     } else {
         _carry = dispatch_data_empty;
     }
-    dispatch_release(mapped);
-
 }
 
 @end

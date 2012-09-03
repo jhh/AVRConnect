@@ -26,16 +26,13 @@
 
 @interface AVRConnection : NSObject {
     @private
-    __weak id<AVRDelegate> _delegate;
-    NSString *_host;
-    NSUInteger _port;
     dispatch_data_t _carry;
     dispatch_io_t _channel;
 }
 
-@property (nonatomic, weak) id<AVRDelegate> delegate;
-@property (nonatomic, readonly) NSString *host;
-@property (nonatomic, readonly) NSUInteger port;
+@property (weak)             id<AVRDelegate> delegate;
+@property (copy, readonly)   NSString *host;
+@property (assign, readonly) NSUInteger port;
 
 - (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host;
 - (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host port:(NSUInteger)port;
