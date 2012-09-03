@@ -24,5 +24,8 @@
     AVRConnection *_connection;
 }
 
+@property NSString *host;
+
+- (id) init;
 - (void) start;
 @end

@@ -28,14 +28,18 @@
     @private
     dispatch_data_t _carry;
     dispatch_io_t _channel;
+    dispatch_source_t _timer;
 }
 
-@property (weak)             id<AVRDelegate> delegate;
-@property (copy, readonly)   NSString *host;
-@property (assign, readonly) NSUInteger port;
+@property (weak) id<AVRDelegate> delegate;
+@property dispatch_queue_t delegateQueue;
+@property dispatch_queue_t socketQueue;
 
-- (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host;
-- (id) initWithDelegate:(id<AVRDelegate>)delegate host:(NSString *)host port:(NSUInteger)port;
+- (id) initWithDelegate:(id<AVRDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
+
+- (BOOL) connectToHost:(NSString *)host error:(NSError **)error;
+- (BOOL) connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)error;
+
 - (void) sendPowerQuery;
 
 @end

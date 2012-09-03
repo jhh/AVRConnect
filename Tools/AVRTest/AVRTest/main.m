@@ -24,8 +24,11 @@ int main(int argc, const char * argv[]) {
 
     @autoreleasepool {
         tester = [[AVRTest alloc] init];
+        if (argc == 2) {
+            tester.host = [NSString stringWithCString:argv[1] encoding:NSASCIIStringEncoding];
+        }
         [tester start];
-        dispatch_main();        
+        dispatch_main();
     }
     return 0;
 }
