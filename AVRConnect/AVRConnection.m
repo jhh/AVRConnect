@@ -39,9 +39,9 @@
 - (id) initWithDelegate:(id<AVRDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue {
     self = [super init];
     if (self) {
-        self.delegate = delegate;
-        self.delegateQueue = delegateQueue;
-        self.socketQueue = dispatch_queue_create("AVRConnect", DISPATCH_QUEUE_SERIAL);
+        _delegate = delegate;
+        _delegateQueue = delegateQueue;
+        _socketQueue = dispatch_queue_create("AVRConnect", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
