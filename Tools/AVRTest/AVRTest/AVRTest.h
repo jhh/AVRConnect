@@ -16,7 +16,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "AVRConnection.h"
+#import <AVRConnect/AVRConnect.h>
 
 
 @interface AVRTest : NSObject <AVRDelegate> {

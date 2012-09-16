@@ -16,7 +16,7 @@
 // limitations under the License.
 
 #import "AVRTest.h"
-#import "AVRConnection.h"
+#import <AVRConnect/AVRConnect.h>
 
 @implementation AVRTest
 
