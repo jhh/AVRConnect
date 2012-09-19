@@ -1,5 +1,5 @@
 //
-//  AVRConnect.h
+//  UnitTests.h
 //
 // Copyright 2012 Jeffrey Hutchison
 //
@@ -15,5 +15,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "AVRConnection.h"
-#import "AVREvent.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface UnitTests : SenTestCase
+
+@end

@@ -20,9 +20,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, AVRDelegate> {
     @private
-    AVRConnection *_connection;
-    NSFont *_font;
-    NSDictionary *_attrsDictionary;
+    AVRConnection *connection;
+    NSDictionary *attrsDictionary;
+    NSDateFormatter *dateFormatter;
 }
 
 @property (assign) IBOutlet NSWindow *window;

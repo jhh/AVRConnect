@@ -17,10 +17,11 @@
 
 #import <Foundation/Foundation.h>
 @class AVRConnection;
+@class AVREvent;
 
 @protocol AVRDelegate <NSObject>
 
-- (void) connection:(AVRConnection *)connection didReceiveEvent:(NSString *)event;
+- (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event;
 
 @end
 

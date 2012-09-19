@@ -12,7 +12,28 @@
 		1F212C891605573500CFCB8F /* AVRConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F212C881605573500CFCB8F /* AVRConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F212C8B1605573D00CFCB8F /* AVRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212C8A1605573D00CFCB8F /* AVRConnection.m */; };
 		1F212CD916055B5F00CFCB8F /* AVRConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F212CD816055B3000CFCB8F /* AVRConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FFAC4B71607FAB6009A3A06 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFAC4B61607FAB6009A3A06 /* SenTestingKit.framework */; };
+		1FFAC4B81607FAB6009A3A06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212C721605568500CFCB8F /* Cocoa.framework */; };
+		1FFAC4BE1607FAB6009A3A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAC4BC1607FAB6009A3A06 /* InfoPlist.strings */; };
+		1FFAC4C11607FAB6009A3A06 /* UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAC4C01607FAB6009A3A06 /* UnitTests.m */; };
+		1FFAC4C61607FB16009A3A06 /* AVRConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212C6F1605568500CFCB8F /* AVRConnect.framework */; };
+		1FFAC4C91607FBA6009A3A06 /* AVREvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FFAC4C71607FBA6009A3A06 /* AVREvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FFAC4CA1607FBA6009A3A06 /* AVREvent.m.rl in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAC4C81607FBA6009A3A06 /* AVREvent.m.rl */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		1FFAC4AE1607F62E009A3A06 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.rl";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
+			);
+			script = "/usr/local/bin/ragel ${INPUT_FILE_DIR}/${INPUT_FILE_BASE}.rl -G2 -o ${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		1F212C6F1605568500CFCB8F /* AVRConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVRConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +47,15 @@
 		1F212C881605573500CFCB8F /* AVRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRConnection.h; sourceTree = "<group>"; };
 		1F212C8A1605573D00CFCB8F /* AVRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRConnection.m; sourceTree = "<group>"; };
 		1F212CD816055B3000CFCB8F /* AVRConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVRConnect.h; sourceTree = "<group>"; };
+		1FFAC4B51607FAB6009A3A06 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFAC4B61607FAB6009A3A06 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1FFAC4BB1607FAB6009A3A06 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		1FFAC4BD1607FAB6009A3A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FFAC4BF1607FAB6009A3A06 /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
+		1FFAC4C01607FAB6009A3A06 /* UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTests.m; sourceTree = "<group>"; };
+		1FFAC4C21607FAB6009A3A06 /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		1FFAC4C71607FBA6009A3A06 /* AVREvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVREvent.h; sourceTree = "<group>"; };
+		1FFAC4C81607FBA6009A3A06 /* AVREvent.m.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AVREvent.m.rl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +67,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FFAC4B11607FAB6009A3A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFAC4B71607FAB6009A3A06 /* SenTestingKit.framework in Frameworks */,
+				1FFAC4B81607FAB6009A3A06 /* Cocoa.framework in Frameworks */,
+				1FFAC4C61607FB16009A3A06 /* AVRConnect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1F212C781605568500CFCB8F /* AVRConnect */,
+				1FFAC4B91607FAB6009A3A06 /* UnitTests */,
 				1F212C711605568500CFCB8F /* Frameworks */,
 				1F212C701605568500CFCB8F /* Products */,
 			);
@@ -53,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				1F212C6F1605568500CFCB8F /* AVRConnect.framework */,
+				1FFAC4B51607FAB6009A3A06 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				1F212C721605568500CFCB8F /* Cocoa.framework */,
+				1FFAC4B61607FAB6009A3A06 /* SenTestingKit.framework */,
 				1F212C741605568500CFCB8F /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -83,6 +126,8 @@
 				1F212C881605573500CFCB8F /* AVRConnection.h */,
 				1F212C791605568500CFCB8F /* Supporting Files */,
 				1F212CD816055B3000CFCB8F /* AVRConnect.h */,
+				1FFAC4C71607FBA6009A3A06 /* AVREvent.h */,
+				1FFAC4C81607FBA6009A3A06 /* AVREvent.m.rl */,
 			);
 			path = AVRConnect;
 			sourceTree = "<group>";
@@ -97,6 +142,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1FFAC4B91607FAB6009A3A06 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FFAC4BF1607FAB6009A3A06 /* UnitTests.h */,
+				1FFAC4C01607FAB6009A3A06 /* UnitTests.m */,
+				1FFAC4BA1607FAB6009A3A06 /* Supporting Files */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		1FFAC4BA1607FAB6009A3A06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FFAC4BB1607FAB6009A3A06 /* UnitTests-Info.plist */,
+				1FFAC4BC1607FAB6009A3A06 /* InfoPlist.strings */,
+				1FFAC4C21607FAB6009A3A06 /* UnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -106,6 +171,7 @@
 			files = (
 				1F212C891605573500CFCB8F /* AVRConnection.h in Headers */,
 				1F212CD916055B5F00CFCB8F /* AVRConnect.h in Headers */,
+				1FFAC4C91607FBA6009A3A06 /* AVREvent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +188,7 @@
 				1F212C6D1605568500CFCB8F /* Resources */,
 			);
 			buildRules = (
+				1FFAC4AE1607F62E009A3A06 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -129,6 +196,24 @@
 			productName = AVRConnect;
 			productReference = 1F212C6F1605568500CFCB8F /* AVRConnect.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		1FFAC4B41607FAB6009A3A06 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FFAC4C31607FAB6009A3A06 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				1FFAC4B01607FAB6009A3A06 /* Sources */,
+				1FFAC4B11607FAB6009A3A06 /* Frameworks */,
+				1FFAC4B21607FAB6009A3A06 /* Resources */,
+				1FFAC4B31607FAB6009A3A06 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 1FFAC4B51607FAB6009A3A06 /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -152,6 +237,7 @@
 			projectRoot = "";
 			targets = (
 				1F212C6E1605568500CFCB8F /* AVRConnect */,
+				1FFAC4B41607FAB6009A3A06 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -165,7 +251,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FFAC4B21607FAB6009A3A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFAC4BE1607FAB6009A3A06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FFAC4B31607FAB6009A3A06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F212C6A1605568500CFCB8F /* Sources */ = {
@@ -173,6 +283,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F212C8B1605573D00CFCB8F /* AVRConnection.m in Sources */,
+				1FFAC4CA1607FBA6009A3A06 /* AVREvent.m.rl in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFAC4B01607FAB6009A3A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFAC4C11607FAB6009A3A06 /* UnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +302,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F212C7C1605568500CFCB8F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1FFAC4BC1607FAB6009A3A06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FFAC4BD1607FAB6009A3A06 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -269,6 +396,32 @@
 			};
 			name = Release;
 		};
+		1FFAC4C41607FAB6009A3A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1FFAC4C51607FAB6009A3A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -286,6 +439,15 @@
 			buildConfigurations = (
 				1F212C851605568500CFCB8F /* Debug */,
 				1F212C861605568500CFCB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FFAC4C31607FAB6009A3A06 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FFAC4C41607FAB6009A3A06 /* Debug */,
+				1FFAC4C51607FAB6009A3A06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

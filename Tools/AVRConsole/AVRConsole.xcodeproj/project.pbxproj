@@ -25,6 +25,13 @@
 			remoteGlobalIDString = 1F212C6F1605568500CFCB8F;
 			remoteInfo = AVRConnect;
 		};
+		1FFAC4D51607FD71009A3A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FFAC4B51607FAB6009A3A06;
+			remoteInfo = UnitTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA120D41605F8BB00642C3E /* AVRConnect.framework */,
+				1FFAC4D61607FD71009A3A06 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +205,13 @@
 			fileType = wrapper.framework;
 			path = AVRConnect.framework;
 			remoteRef = 1FA120D31605F8BB00642C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1FFAC4D61607FD71009A3A06 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 1FFAC4D51607FD71009A3A06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -346,6 +361,7 @@
 				1FA120CB1605F6BB00642C3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

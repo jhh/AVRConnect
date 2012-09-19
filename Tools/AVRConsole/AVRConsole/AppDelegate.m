@@ -21,24 +21,26 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    _connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error;
-    [_connection connectToHost:@"10.0.1.2" error:&error];
+    // TODO: hangs on refused connection
+    [connection connectToHost:@"10.0.1.2" error:&error];
 
-    _font = [NSFont fontWithName:@"Consolas" size:12.0];
-    _attrsDictionary = [NSDictionary dictionaryWithObject:_font forKey:NSFontAttributeName];
-
+    NSFont *font = [NSFont fontWithName:@"Consolas" size:12.0];
+    attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 }
 
-- (void) connection:(AVRConnection *)connection didReceiveEvent:(NSString *)event {
-    NSString *message = [NSString stringWithFormat:@"%@: %@\n", [NSDate date], event];
-    NSAttributedString* as = [[NSAttributedString alloc] initWithString:message attributes:_attrsDictionary];
-    NSTextStorage* text = self.textView.textStorage;
+- (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {
+    NSString *message = [NSString stringWithFormat:@"%@: %@\n", [dateFormatter stringFromDate:[NSDate date]], [event rawEvent]];
+    NSAttributedString *as = [[NSAttributedString alloc] initWithString:message attributes:attrsDictionary];
+    NSTextStorage *text = self.textView.textStorage;
     [text beginEditing];
-    [text appendAttributedString: as];
+    [text appendAttributedString:as];
     [text endEditing];
-    NSRange r = NSMakeRange(text.length, 0);
-    [self.textView scrollRangeToVisible: r];
+    [self.textView scrollRangeToVisible:NSMakeRange(text.length, 0)];
 }
 
 @end
