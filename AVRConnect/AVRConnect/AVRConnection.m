@@ -16,6 +16,7 @@
 // limitations under the License.
 
 #import "AVRConnection.h"
+#import "AVREvent.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -39,9 +40,9 @@
 - (id) initWithDelegate:(id<AVRDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue {
     self = [super init];
     if (self) {
-        self.delegate = delegate;
-        self.delegateQueue = delegateQueue;
-        self.socketQueue = dispatch_queue_create("AVRConnect", DISPATCH_QUEUE_SERIAL);
+        _delegate = delegate;
+        _delegateQueue = delegateQueue;
+        _socketQueue = dispatch_queue_create("AVRConnect", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -125,7 +126,7 @@
     // parse responses by \r delimiter
     while ((end = memchr(start, 0x0d, (buffer+size) - start)) != NULL) {
         NSString *response = [[NSString alloc] initWithBytes:start length:end-start encoding:NSASCIIStringEncoding];
-        [self.delegate connection:self didReceiveEvent: response];
+        [self.delegate connection:self didReceiveEvent:[[AVREvent alloc] initWithString:response]];
         start = end + 1;
     }
 

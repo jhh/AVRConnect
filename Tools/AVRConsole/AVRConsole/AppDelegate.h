@@ -1,5 +1,5 @@
 //
-//  AVRTest.h
+//  AVRConsole.h
 //
 // Copyright 2012 Jeffrey Hutchison
 //
@@ -15,26 +15,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "AVRTest.h"
+#import <Cocoa/Cocoa.h>
 #import <AVRConnect/AVRConnect.h>
 
-@implementation AVRTest
-
-- (id) init {
-    self = [super init];
-    if (self) {
-        self.host = @"10.0.1.2";
-    }
-    return self;
+@interface AppDelegate : NSObject <NSApplicationDelegate, AVRDelegate> {
+    @private
+    AVRConnection *connection;
+    NSDictionary *attrsDictionary;
+    NSDateFormatter *dateFormatter;
 }
 
-- (void) start {
-    _connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(0, 0)];
-    [_connection connectToHost:self.host error:nil];
-    [_connection sendPowerQuery];
-}
+@property (assign) IBOutlet NSWindow *window;
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 
-- (void) connection:(AVRConnection *)connection didReceiveEvent:(NSString *)event {
-    NSLog(@"event: %@", event);
-}
 @end
