@@ -40,16 +40,19 @@
 
     event = [[AVREvent alloc] initWithString:@"PWSTANDBY\r"];
     STAssertEquals(event.eventType, (AVREventType)AVRPowerEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"PWSTANDBY", @"rawEvent is wrong");
     STAssertFalse(event.boolValue, @"parameter value is wrong");
 }
 
 - (void)testMasterVolumeEvent {
     AVREvent *event = [[AVREvent alloc] initWithString:@"MV39\r"];
     STAssertEquals(event.eventType, (AVREventType)AVRMasterVolumeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"MV39", @"rawEvent is wrong");
     STAssertEquals(event.floatValue, (float)39.0, @"parameter value is wrong");
 
     event = [[AVREvent alloc] initWithString:@"MV245\r"];
     STAssertEquals(event.eventType, (AVREventType)AVRMasterVolumeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"MV245", @"rawEvent is wrong");
     STAssertEquals(event.floatValue, (float)24.5, @"parameter value is wrong");
 }
 

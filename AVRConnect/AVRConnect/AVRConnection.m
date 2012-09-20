@@ -121,11 +121,12 @@
     assert(mapped != NULL);
 
     // start will point to beginning of a response, end will point to end (\r)
-    void *start = (void *)buffer, *end;
+    const void *start = buffer, *end;
 
     // parse responses by \r delimiter
     while ((end = memchr(start, 0x0d, (buffer+size) - start)) != NULL) {
-        NSString *response = [[NSString alloc] initWithBytes:start length:end-start encoding:NSASCIIStringEncoding];
+        // add 1 to length to include \r for parser
+        NSString *response = [[NSString alloc] initWithBytes:start length:end-start+1 encoding:NSASCIIStringEncoding];
         [self.delegate connection:self didReceiveEvent:[[AVREvent alloc] initWithString:response]];
         start = end + 1;
     }
