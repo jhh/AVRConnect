@@ -21,7 +21,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate, AVRDelegate> {
     @private
     AVRConnection *connection;
-    NSDictionary *attrsDictionary;
+    NSDictionary *eventAttrs, *unknownEventAttrs;
     NSDateFormatter *dateFormatter;
 }
 

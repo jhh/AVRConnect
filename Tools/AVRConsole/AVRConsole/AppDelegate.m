@@ -27,13 +27,15 @@
     [connection connectToHost:@"10.0.1.2" error:&error];
 
     NSFont *font = [NSFont fontWithName:@"Consolas" size:12.0];
-    attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+    eventAttrs = @{ NSFontAttributeName : font };
+    unknownEventAttrs = @{ NSFontAttributeName : font, NSForegroundColorAttributeName : [NSColor grayColor] };
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterNoStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 }
 
 - (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {
+    NSDictionary *attrsDictionary = event.eventType == AVRUnknownEvent ? unknownEventAttrs : eventAttrs;
     NSString *message = [NSString stringWithFormat:@"%@: %@\n", [dateFormatter stringFromDate:[NSDate date]], [event rawEvent]];
     NSAttributedString *as = [[NSAttributedString alloc] initWithString:message attributes:attrsDictionary];
     NSTextStorage *text = self.textView.textStorage;
