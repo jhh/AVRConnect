@@ -69,6 +69,7 @@ float integer2float(int i) {
     # TODO: PS event incomplete
     ps    = 'PS'     . ascii+ . cr;
     psint = 'PS'     . ('BAS ' | 'TRE ' | 'LFE ' | 'DEL ' | 'DIM ' | 'CEN ' | 'CEI ') . digits;
+    pv    = 'PV'     . ('CN' | 'BR' | 'CM' | 'HUE' ) . ' ' . digits;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -98,6 +99,11 @@ float integer2float(int i) {
           _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, 3)];
       };
       ps    => { SELECT_EVENT(AVRAudioParameterEvent); };
+      pv => {
+          SELECT_EVENT(AVRPictureAdjustEvent);
+          _integerValue = fsm.i;
+          _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, 2)];
+      };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;

@@ -217,4 +217,16 @@
     STAssertEqualObjects(event.stringValue, @"DEL", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRPictureAdjustEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"PVCN 06\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRPictureAdjustEvent, @"eventType is wrong");
+    STAssertEquals(event.integerValue, (NSInteger)6, @"integerValue parameter is wrong");
+    STAssertEqualObjects(event.stringValue, @"CN", @"stringValue parameter is wrong");
+
+    event = [[AVREvent alloc] initWithString:@"PVHUE 17\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRPictureAdjustEvent, @"eventType is wrong");
+    STAssertEquals(event.integerValue, (NSInteger)17, @"integerValue parameter is wrong");
+    STAssertEqualObjects(event.stringValue, @"HU", @"stringValue parameter is wrong");
+}
+
 @end
