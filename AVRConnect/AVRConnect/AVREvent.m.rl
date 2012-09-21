@@ -18,7 +18,7 @@
 #import "AVREvent.h"
 
 #define VOLUME_EVENT(type) _eventType = type; _floatValue = integer2float(fsm.i)
-#define SOURCE_EVENT(type) _eventType = type; \
+#define SELECT_EVENT(type) _eventType = type; \
     _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, [_rawEvent length]-2)]
 
 struct EventFSM {
@@ -61,6 +61,7 @@ float integer2float(int i) {
     si    = 'SI'     . ascii+ . cr;
     zm    = 'ZM'     . ('ON' @on | 'OFF' @off ) . cr;
     sr    = 'SR'     . ascii+ . cr;
+    sd    = 'SD'     . ascii+ . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -76,9 +77,10 @@ float integer2float(int i) {
       cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent); };
       cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent); };
       mu    => { _eventType = AVRMuteEvent; };
-      si    => { SOURCE_EVENT(AVRInputSourceEvent); };
+      si    => { SELECT_EVENT(AVRInputSourceEvent); };
       zm    => { _eventType = AVRMainZoneEvent; };
-      sr    => { SOURCE_EVENT(AVRRecordSelectEvent); };
+      sr    => { SELECT_EVENT(AVRRecordSelectEvent); };
+      sd    => { SELECT_EVENT(AVRInputModeEvent); };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;

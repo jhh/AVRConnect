@@ -165,4 +165,10 @@
     STAssertEqualObjects(event.stringValue, @"NET/USB", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRInputModeEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"SDEXT.IN-1\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRInputModeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"EXT.IN-1", @"stringValue parameter is wrong");
+}
+
 @end
