@@ -25,6 +25,7 @@
     NSError *error;
     // TODO: hangs on refused connection
     [connection connectToHost:@"10.0.1.2" error:&error];
+    [connection sendPowerQuery];
 
     NSFont *font = [NSFont fontWithName:@"Consolas" size:12.0];
     eventAttrs = @{ NSFontAttributeName : font };
