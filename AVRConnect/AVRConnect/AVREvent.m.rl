@@ -17,16 +17,19 @@
 
 #import "AVREvent.h"
 
-#define BUFLEN 136
+#define VOLUME_EVENT(type) _eventType = type; _floatValue = integer2float(fsm.i);
 
 struct EventFSM {
     // Ragel variables
     int  cs, act;
     char *ts, *te;
     // state machine variables
-    char buffer[BUFLEN+1];
     int i;
 };
+
+float integer2float(int i) {
+  return i < 100 ? i : (i / 10.0);
+}
 
 %%{
     machine event_parser;
@@ -36,28 +39,37 @@ struct EventFSM {
     action standby { _boolValue = 0; }
     action digit   { fsm.i = fsm.i * 10.0 + (fc - '0'); }
 
-    action power {
-        _eventType = AVRPowerEvent;
-    }
-    
-    action mv {
-        _eventType = AVRMasterVolumeEvent;
-        _floatValue = fsm.i < 100 ? fsm.i : (fsm.i / 10.0);
-    }
+    cr    = '\r';
+    digits = digit+ @digit . cr;
 
-    action unknown {
-        _eventType = AVRUnknownEvent;
-        
-    }
-
-    cr = '\r';
-    power = 'PW' . ('ON' @on | 'STANDBY' @standby ) . cr;
-    mv = ('MV' @mv) . digit+ @digit . cr;
+    pw    = 'PW'     . ('ON' @on | 'STANDBY' @standby ) . cr;
+    mv    = 'MV'     . digits;
+    mvmax = 'MVMAX ' . digits;
+    cvfl  = 'CVFL '  . digits;
+    cvfr  = 'CVFR '  . digits;
+    cvc   = 'CVC '   . digits;
+    cvsw  = 'CVSW '  . digits;
+    cvsl  = 'CVSL '  . digits;
+    cvsr  = 'CVSR '  . digits;
+    cvsbl = 'CVSBL ' . digits;
+    cvsbr = 'CVSBR ' . digits;
+    cvsb  = 'CVSB '  . digits;
 
     main := |*
-    power => power;
-    mv => mv;
-    alnum+ . cr => unknown;
+      pw    => { _eventType = AVRPowerEvent; };
+      mv    => { VOLUME_EVENT(AVRMasterVolumeEvent) };
+      mvmax => { VOLUME_EVENT(AVRMasterVolumeMaxEvent) };
+      cvfl  => { VOLUME_EVENT(AVRChannelVolumeFrontLeftEvent) };
+      cvfr  => { VOLUME_EVENT(AVRChannelVolumeFrontRightEvent) };
+      cvc   => { VOLUME_EVENT(AVRChannelVolumeCenterEvent) };
+      cvsw  => { VOLUME_EVENT(AVRChannelVolumeSubwooferEvent) };
+      cvsl  => { VOLUME_EVENT(AVRChannelVolumeSurroundLeftEvent) };
+      cvsr  => { VOLUME_EVENT(AVRChannelVolumeSurroundRightEvent) };
+      cvsbl => { VOLUME_EVENT(AVRChannelVolumeSurroundBackLeftEvent) };
+      cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent) };
+      cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent) };
+
+      alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
 
     write data;
@@ -76,6 +88,7 @@ struct EventFSM {
     if (self) {
         _rawEvent = [rawEvent substringToIndex:([rawEvent length] - 1)];
         struct EventFSM fsm;
+        fsm.i = 0;
         char *p  = (char *)[rawEvent cStringUsingEncoding:NSASCIIStringEncoding];
         char *pe = p + strlen(p) + 1;
         %% write init;
