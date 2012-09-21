@@ -35,14 +35,15 @@ float integer2float(int i) {
     machine event_parser;
     access fsm.;
 
-    action on      { _boolValue = 1; }
-    action standby { _boolValue = 0; }
-    action digit   { fsm.i = fsm.i * 10.0 + (fc - '0'); }
+    # use ivars instead of properties because these run in init
+    action on    { _boolValue = 1; }
+    action off   { _boolValue = 0; }
+    action digit { fsm.i = fsm.i * 10.0 + (fc - '0'); }
 
     cr    = '\r';
     digits = digit+ @digit . cr;
 
-    pw    = 'PW'     . ('ON' @on | 'STANDBY' @standby ) . cr;
+    pw    = 'PW'     . ('ON' @on | 'STANDBY' @off ) . cr;
     mv    = 'MV'     . digits;
     mvmax = 'MVMAX ' . digits;
     cvfl  = 'CVFL '  . digits;
@@ -54,6 +55,7 @@ float integer2float(int i) {
     cvsbl = 'CVSBL ' . digits;
     cvsbr = 'CVSBR ' . digits;
     cvsb  = 'CVSB '  . digits;
+    mu    = 'MU'     . ('ON' @on | 'OFF' @off ) . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -68,6 +70,7 @@ float integer2float(int i) {
       cvsbl => { VOLUME_EVENT(AVRChannelVolumeSurroundBackLeftEvent) };
       cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent) };
       cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent) };
+      mu    => { _eventType = AVRMuteEvent; };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;

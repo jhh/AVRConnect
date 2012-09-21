@@ -131,5 +131,18 @@
     STAssertEquals(event.floatValue, (float)80.0, @"parameter value is wrong");
 }
 
+- (void)testAVRMuteEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"MUON\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRMuteEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"MUON", @"rawEvent is wrong");
+    STAssertTrue(event.boolValue, @"parameter value is wrong");
+
+    event = [[AVREvent alloc] initWithString:@"MUOFF\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRMuteEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"MUOFF", @"rawEvent is wrong");
+    STAssertFalse(event.boolValue, @"parameter value is wrong");
+}
+
+
 
 @end
