@@ -63,6 +63,7 @@ float integer2float(int i) {
     sr    = 'SR'     . ascii+ . cr;
     sd    = 'SD'     . ascii+ . cr;
     dc    = 'DC'     . ascii+ . cr;
+    sv    = 'SV'     . ascii+ . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -83,6 +84,7 @@ float integer2float(int i) {
       sr    => { SELECT_EVENT(AVRRecordSelectEvent); };
       sd    => { SELECT_EVENT(AVRInputModeEvent); };
       dc    => { SELECT_EVENT(AVRDigitalInputModeEvent); };
+      sv    => { SELECT_EVENT(AVRVideoSelectModeEvent); };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;

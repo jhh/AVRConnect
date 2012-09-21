@@ -177,4 +177,10 @@
     STAssertEqualObjects(event.stringValue, @"PCM", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRVideoSelectModeEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"SVSOURCE\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRVideoSelectModeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"SOURCE", @"stringValue parameter is wrong");
+}
+
 @end
