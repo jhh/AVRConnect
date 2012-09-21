@@ -143,6 +143,14 @@
     STAssertFalse(event.boolValue, @"parameter value is wrong");
 }
 
+- (void) testAVRInputSourceEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"SIPHONO\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRInputSourceEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"PHONO", @"stringValue parameter is wrong");
 
+    event = [[AVREvent alloc] initWithString:@"SITV/CBL\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRInputSourceEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"TV/CBL", @"stringValue parameter is wrong");
+}
 
 @end

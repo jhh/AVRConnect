@@ -56,6 +56,7 @@ float integer2float(int i) {
     cvsbr = 'CVSBR ' . digits;
     cvsb  = 'CVSB '  . digits;
     mu    = 'MU'     . ('ON' @on | 'OFF' @off ) . cr;
+    si    = 'SI'     . ascii+ . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -71,6 +72,8 @@ float integer2float(int i) {
       cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent) };
       cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent) };
       mu    => { _eventType = AVRMuteEvent; };
+      si    => { _eventType = AVRInputSourceEvent;
+                 _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, [_rawEvent length]-2)]; };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
@@ -94,6 +97,7 @@ float integer2float(int i) {
         fsm.i = 0;
         char *p  = (char *)[rawEvent cStringUsingEncoding:NSASCIIStringEncoding];
         char *pe = p + strlen(p) + 1;
+        char *eof = pe;
         %% write init;
         %% write exec;
     }
