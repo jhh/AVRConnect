@@ -195,4 +195,26 @@
     STAssertEqualObjects(event.stringValue, @"SC72P", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRAudioParameterEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"PSRSTR MODE1\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRAudioParameterEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"RSTR MODE1", @"stringValue parameter is wrong");
+
+    event = [[AVREvent alloc] initWithString:@"PSBAS 03\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRAudioParameterEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.rawEvent, @"PSBAS 03", @"rawEvent is wrong");
+    STAssertEquals(event.integerValue, (NSInteger)3, @"integerValue parameter is wrong");
+    STAssertEqualObjects(event.stringValue, @"BAS", @"stringValue parameter is wrong");
+
+    event = [[AVREvent alloc] initWithString:@"PSLFE 10\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRAudioParameterEvent, @"eventType is wrong");
+    STAssertEquals(event.integerValue, (NSInteger)10, @"integerValue parameter is wrong");
+    STAssertEqualObjects(event.stringValue, @"LFE", @"stringValue parameter is wrong");
+
+    event = [[AVREvent alloc] initWithString:@"PSDEL 123\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRAudioParameterEvent, @"eventType is wrong");
+    STAssertEquals(event.integerValue, (NSInteger)123, @"integerValue parameter is wrong");
+    STAssertEqualObjects(event.stringValue, @"DEL", @"stringValue parameter is wrong");
+}
+
 @end

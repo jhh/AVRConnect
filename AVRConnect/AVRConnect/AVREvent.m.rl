@@ -66,6 +66,9 @@ float integer2float(int i) {
     sv    = 'SV'     . ascii+ . cr;
     ms    = 'MS'     . ascii+ . cr;
     vs    = 'VS'     . ascii+ . cr;
+    # TODO: PS event incomplete
+    ps    = 'PS'     . ascii+ . cr;
+    psint = 'PS'     . ('BAS ' | 'TRE ' | 'LFE ' | 'DEL ' | 'DIM ' | 'CEN ' | 'CEI ') . digits;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -89,6 +92,12 @@ float integer2float(int i) {
       sv    => { SELECT_EVENT(AVRVideoSelectModeEvent); };
       ms    => { SELECT_EVENT(AVRSurroundModeEvent); };
       vs    => { SELECT_EVENT(AVRHDMISettingEvent); };
+      psint => {
+          SELECT_EVENT(AVRAudioParameterEvent);
+          _integerValue = fsm.i;
+          _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, 3)];
+      };
+      ps    => { SELECT_EVENT(AVRAudioParameterEvent); };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
@@ -99,7 +108,9 @@ float integer2float(int i) {
 
 @interface AVREvent ()
 @property(readwrite) BOOL boolValue;
+@property(readwrite) float floatValue;
 @property(readwrite) NSString *stringValue;
+@property(readwrite) NSInteger integerValue;
 @end
 
 @implementation AVREvent

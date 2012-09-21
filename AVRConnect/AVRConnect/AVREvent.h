@@ -82,6 +82,7 @@ typedef NSUInteger AVREventType;
 @property(readonly) BOOL boolValue;
 @property(readonly) float floatValue;
 @property(readonly) NSString *stringValue;
+@property(readonly) NSInteger integerValue;
 
 - (id) initWithString:(NSString *)rawEvent;
 
