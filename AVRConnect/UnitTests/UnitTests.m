@@ -153,4 +153,10 @@
     STAssertEqualObjects(event.stringValue, @"TV/CBL", @"stringValue parameter is wrong");
 }
 
+- (void)testAVRMainZoneEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"ZMON\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRMainZoneEvent, @"eventType is wrong");
+    STAssertTrue(event.boolValue, @"parameter value is wrong");
+}
+
 @end

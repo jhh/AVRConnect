@@ -57,6 +57,7 @@ float integer2float(int i) {
     cvsb  = 'CVSB '  . digits;
     mu    = 'MU'     . ('ON' @on | 'OFF' @off ) . cr;
     si    = 'SI'     . ascii+ . cr;
+    zm    = 'ZM'     . ('ON' @on | 'OFF' @off ) . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -74,6 +75,7 @@ float integer2float(int i) {
       mu    => { _eventType = AVRMuteEvent; };
       si    => { _eventType = AVRInputSourceEvent;
                  _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, [_rawEvent length]-2)]; };
+      zm    => { _eventType = AVRMainZoneEvent; };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
