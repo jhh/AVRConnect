@@ -183,4 +183,10 @@
     STAssertEqualObjects(event.stringValue, @"SOURCE", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRSurroundModeEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"MSM CH IN+PL2X M\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRSurroundModeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"M CH IN+PL2X M", @"stringValue parameter is wrong");
+}
+
 @end
