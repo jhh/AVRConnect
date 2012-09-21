@@ -159,4 +159,10 @@
     STAssertTrue(event.boolValue, @"parameter value is wrong");
 }
 
+- (void) testAVRRecordSelectEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"SRNET/USB\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRRecordSelectEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"NET/USB", @"stringValue parameter is wrong");
+}
+
 @end

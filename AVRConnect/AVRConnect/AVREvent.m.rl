@@ -17,7 +17,9 @@
 
 #import "AVREvent.h"
 
-#define VOLUME_EVENT(type) _eventType = type; _floatValue = integer2float(fsm.i);
+#define VOLUME_EVENT(type) _eventType = type; _floatValue = integer2float(fsm.i)
+#define SOURCE_EVENT(type) _eventType = type; \
+    _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, [_rawEvent length]-2)]
 
 struct EventFSM {
     // Ragel variables
@@ -58,24 +60,25 @@ float integer2float(int i) {
     mu    = 'MU'     . ('ON' @on | 'OFF' @off ) . cr;
     si    = 'SI'     . ascii+ . cr;
     zm    = 'ZM'     . ('ON' @on | 'OFF' @off ) . cr;
+    sr    = 'SR'     . ascii+ . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
-      mv    => { VOLUME_EVENT(AVRMasterVolumeEvent) };
-      mvmax => { VOLUME_EVENT(AVRMasterVolumeMaxEvent) };
-      cvfl  => { VOLUME_EVENT(AVRChannelVolumeFrontLeftEvent) };
-      cvfr  => { VOLUME_EVENT(AVRChannelVolumeFrontRightEvent) };
-      cvc   => { VOLUME_EVENT(AVRChannelVolumeCenterEvent) };
-      cvsw  => { VOLUME_EVENT(AVRChannelVolumeSubwooferEvent) };
-      cvsl  => { VOLUME_EVENT(AVRChannelVolumeSurroundLeftEvent) };
-      cvsr  => { VOLUME_EVENT(AVRChannelVolumeSurroundRightEvent) };
-      cvsbl => { VOLUME_EVENT(AVRChannelVolumeSurroundBackLeftEvent) };
-      cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent) };
-      cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent) };
+      mv    => { VOLUME_EVENT(AVRMasterVolumeEvent); };
+      mvmax => { VOLUME_EVENT(AVRMasterVolumeMaxEvent); };
+      cvfl  => { VOLUME_EVENT(AVRChannelVolumeFrontLeftEvent); };
+      cvfr  => { VOLUME_EVENT(AVRChannelVolumeFrontRightEvent); };
+      cvc   => { VOLUME_EVENT(AVRChannelVolumeCenterEvent); };
+      cvsw  => { VOLUME_EVENT(AVRChannelVolumeSubwooferEvent); };
+      cvsl  => { VOLUME_EVENT(AVRChannelVolumeSurroundLeftEvent); };
+      cvsr  => { VOLUME_EVENT(AVRChannelVolumeSurroundRightEvent); };
+      cvsbl => { VOLUME_EVENT(AVRChannelVolumeSurroundBackLeftEvent); };
+      cvsbr => { VOLUME_EVENT(AVRChannelVolumeSurroundBackRightEvent); };
+      cvsb  => { VOLUME_EVENT(AVRChannelVolumeSurroundBackEvent); };
       mu    => { _eventType = AVRMuteEvent; };
-      si    => { _eventType = AVRInputSourceEvent;
-                 _stringValue = [_rawEvent substringWithRange:NSMakeRange(2, [_rawEvent length]-2)]; };
+      si    => { SOURCE_EVENT(AVRInputSourceEvent); };
       zm    => { _eventType = AVRMainZoneEvent; };
+      sr    => { SOURCE_EVENT(AVRRecordSelectEvent); };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
