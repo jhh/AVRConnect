@@ -171,4 +171,10 @@
     STAssertEqualObjects(event.stringValue, @"EXT.IN-1", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRDigitalInputModeEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"DCPCM\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRDigitalInputModeEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"PCM", @"stringValue parameter is wrong");
+}
+
 @end

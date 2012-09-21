@@ -62,6 +62,7 @@ float integer2float(int i) {
     zm    = 'ZM'     . ('ON' @on | 'OFF' @off ) . cr;
     sr    = 'SR'     . ascii+ . cr;
     sd    = 'SD'     . ascii+ . cr;
+    dc    = 'DC'     . ascii+ . cr;
 
     main := |*
       pw    => { _eventType = AVRPowerEvent; };
@@ -81,6 +82,7 @@ float integer2float(int i) {
       zm    => { _eventType = AVRMainZoneEvent; };
       sr    => { SELECT_EVENT(AVRRecordSelectEvent); };
       sd    => { SELECT_EVENT(AVRInputModeEvent); };
+      dc    => { SELECT_EVENT(AVRDigitalInputModeEvent); };
 
       alnum+ . cr => { _eventType = AVRUnknownEvent; };
     *|;
