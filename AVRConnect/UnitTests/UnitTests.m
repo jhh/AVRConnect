@@ -189,4 +189,10 @@
     STAssertEqualObjects(event.stringValue, @"M CH IN+PL2X M", @"stringValue parameter is wrong");
 }
 
+- (void) testAVRHDMISettingEvent {
+    AVREvent *event = [[AVREvent alloc] initWithString:@"VSSC72P\r"];
+    STAssertEquals(event.eventType, (AVREventType)AVRHDMISettingEvent, @"eventType is wrong");
+    STAssertEqualObjects(event.stringValue, @"SC72P", @"stringValue parameter is wrong");
+}
+
 @end
