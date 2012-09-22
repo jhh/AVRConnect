@@ -26,7 +26,6 @@
     // TODO: hangs on refused connection
     [connection connectToHost:@"10.0.1.2" error:&error];
     [connection sendCommand:@"PW?" withInterval:30];
-    [connection sendCommand:@"SSFUN ?"];
 
     NSFont *font = [NSFont fontWithName:@"Monaco" size:12.0];
     eventAttrs = @{ NSFontAttributeName : font };
@@ -45,6 +44,22 @@
     [text appendAttributedString:as];
     [text endEditing];
     [self.textView scrollRangeToVisible:NSMakeRange(text.length, 0)];
+}
+
+- (IBAction)queryInputSources:(id)sender {
+    [connection sendCommand:@"SSFUN ?"];
+}
+
+- (IBAction)queryInputSourceUsage:(id)sender {
+    [connection sendCommand:@"SSSOD ?"];
+}
+
+- (IBAction)querySpeakerStatus:(id)sender {
+    [connection sendCommand:@"SSSPC ?"];
+}
+
+- (IBAction)querySpeakerChannelStatus:(id)sender {
+    [connection sendCommand:@"PSCHN ?"];
 }
 
 @end

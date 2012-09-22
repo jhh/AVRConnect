@@ -28,4 +28,9 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 
+- (IBAction)queryInputSources:(id)sender;
+- (IBAction)queryInputSourceUsage:(id)sender;
+- (IBAction)querySpeakerStatus:(id)sender;
+- (IBAction)querySpeakerChannelStatus:(id)sender;
+
 @end
