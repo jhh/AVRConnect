@@ -25,14 +25,15 @@
     NSError *error;
     // TODO: hangs on refused connection
     [connection connectToHost:@"10.0.1.2" error:&error];
-    [connection sendPowerQuery];
+    [connection sendCommand:@"PW?" withInterval:30];
+    [connection sendCommand:@"SSFUN ?"];
 
-    NSFont *font = [NSFont fontWithName:@"Consolas" size:12.0];
+    NSFont *font = [NSFont fontWithName:@"Monaco" size:12.0];
     eventAttrs = @{ NSFontAttributeName : font };
     unknownEventAttrs = @{ NSFontAttributeName : font, NSForegroundColorAttributeName : [NSColor grayColor] };
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
 }
 
 - (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {

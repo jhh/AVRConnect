@@ -24,7 +24,6 @@
 #include <unistd.h>
 
 #define TELNET_PORT 23
-#define POWER_QUERY_INTERVAL 30ull // seconds
 
 // declare private methods
 
@@ -72,19 +71,26 @@
 
 #pragma mark Utility Methods
 
-- (void) sendPowerQuery {
-    // TODO: handle multiple calls
-    const char *command_buf = "PW?\r";
-    dispatch_data_t command = dispatch_data_create(command_buf, strlen(command_buf), dispatch_get_global_queue(0, 0), DISPATCH_DATA_DESTRUCTOR_DEFAULT);
-
-    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
-    dispatch_time_t now = dispatch_walltime(DISPATCH_TIME_NOW, 0);
-    dispatch_source_set_timer(_timer, now, POWER_QUERY_INTERVAL*NSEC_PER_SEC, 1ull*NSEC_PER_SEC);
-    dispatch_source_set_event_handler(_timer, ^{
-        dispatch_io_write(_channel, 0, command, self.socketQueue, ^(bool done, dispatch_data_t data, int error) {
+- (void) sendCommand:(NSString *)command {
+    command = [command stringByAppendingString:@"\r"];
+    const char *command_buf = [command cStringUsingEncoding:NSASCIIStringEncoding];
+    dispatch_data_t message = dispatch_data_create(command_buf, strlen(command_buf), dispatch_get_global_queue(0, 0), DISPATCH_DATA_DESTRUCTOR_DEFAULT);
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, 2000ull*NSEC_PER_USEC);
+    dispatch_after(delay, dispatch_get_global_queue(0, 0), ^{
+        dispatch_io_write(_channel, 0, message, self.socketQueue, ^(bool done, dispatch_data_t data, int error) {
             if(error) NSLog(@"WRITE ERROR!!!");
         });
     });
+}
+
+- (void) sendCommand:(NSString *)command withInterval:(NSUInteger)interval {
+    if (_timer) {
+        dispatch_source_cancel(_timer);
+    }
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
+    dispatch_time_t now = dispatch_walltime(DISPATCH_TIME_NOW, 0);
+    dispatch_source_set_timer(_timer, now, interval * NSEC_PER_SEC, 1ull * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(_timer, ^{ [self sendCommand:command]; });
     dispatch_resume(_timer);
 }
 

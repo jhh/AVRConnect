@@ -41,6 +41,10 @@
 - (BOOL) connectToHost:(NSString *)host error:(NSError **)error;
 - (BOOL) connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)error;
 
-- (void) sendPowerQuery;
+// sends command after 200ms delay
+- (void) sendCommand:(NSString *)command;
+
+// interval in seconds, calling multiple time currently cancels previous timer
+- (void) sendCommand:(NSString *)command withInterval:(NSUInteger)interval;
 
 @end
