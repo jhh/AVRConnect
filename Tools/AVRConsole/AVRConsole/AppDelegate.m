@@ -62,4 +62,8 @@
     [connection sendCommand:@"PSCHN ?"];
 }
 
+- (IBAction)sendCommand:(NSTextField *)sender {
+    [connection sendCommand:[sender stringValue]];
+}
+
 @end

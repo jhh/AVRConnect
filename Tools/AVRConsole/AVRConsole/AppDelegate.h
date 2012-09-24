@@ -32,5 +32,6 @@
 - (IBAction)queryInputSourceUsage:(id)sender;
 - (IBAction)querySpeakerStatus:(id)sender;
 - (IBAction)querySpeakerChannelStatus:(id)sender;
+- (IBAction)sendCommand:(NSTextField *)sender;
 
 @end
