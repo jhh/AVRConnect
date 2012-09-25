@@ -16,12 +16,12 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import <AVRConnect/AVRConnect.h>
+#import "AVRConnect.h"
 
 
 @interface AVRTest : NSObject <AVRDelegate> {
     @private
-    AVRConnection *_connection;
+    AVRConnection *connection;
 }
 
 @property NSString *host;

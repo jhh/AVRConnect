@@ -10,9 +10,33 @@
 		1F212CBF16055A3100CFCB8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212CBE16055A3100CFCB8F /* Foundation.framework */; };
 		1F212CC216055A3100CFCB8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212CC116055A3100CFCB8F /* main.m */; };
 		1F212CC616055A3100CFCB8F /* AVRTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F212CC516055A3100CFCB8F /* AVRTest.1 */; };
-		1F212CDC16055B9900CFCB8F /* AVRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212CDB16055B9900CFCB8F /* AVRTest.m */; };
-		1F7E57591605F3DD001B0CD4 /* AVRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E57581605F3DD001B0CD4 /* AVRConnection.m */; };
+		1F9EE8A1161130C4000796AC /* liblibAVRConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */; };
+		1F9EE8A2161131C8000796AC /* AVRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212CDB16055B9900CFCB8F /* AVRTest.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F9EE88616112FB5000796AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F212C6F1605568500CFCB8F;
+			remoteInfo = AVRConnect;
+		};
+		1F9EE88816112FB5000796AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FFAC4B51607FAB6009A3A06;
+			remoteInfo = UnitTests;
+		};
+		1F9EE89F161130C4000796AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F9EE88E16112FD4000796AC;
+			remoteInfo = libAVRConnect;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1F212CB816055A3100CFCB8F /* CopyFiles */ = {
@@ -35,8 +59,7 @@
 		1F212CC516055A3100CFCB8F /* AVRTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AVRTest.1; sourceTree = "<group>"; };
 		1F212CDA16055B9900CFCB8F /* AVRTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRTest.h; sourceTree = "<group>"; };
 		1F212CDB16055B9900CFCB8F /* AVRTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRTest.m; sourceTree = "<group>"; };
-		1F7E57571605F3DD001B0CD4 /* AVRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVRConnection.h; path = ../../AVRConnect/AVRConnect/AVRConnection.h; sourceTree = "<group>"; };
-		1F7E57581605F3DD001B0CD4 /* AVRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVRConnection.m; path = ../../AVRConnect/AVRConnect/AVRConnection.m; sourceTree = "<group>"; };
+		1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVRConnect.xcodeproj; path = ../../AVRConnect/AVRConnect.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F212CBF16055A3100CFCB8F /* Foundation.framework in Frameworks */,
+				1F9EE8A1161130C4000796AC /* liblibAVRConnect.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +78,7 @@
 		1F212CAF16055A3100CFCB8F = {
 			isa = PBXGroup;
 			children = (
-				1F7E575A1605F3E3001B0CD4 /* AVRConnect */,
+				1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */,
 				1F212CC016055A3100CFCB8F /* AVRTest */,
 				1F212CBD16055A3100CFCB8F /* Frameworks */,
 				1F212CBB16055A3100CFCB8F /* Products */,
@@ -97,13 +121,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1F7E575A1605F3E3001B0CD4 /* AVRConnect */ = {
+		1F9EE87F16112FB4000796AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1F7E57581605F3DD001B0CD4 /* AVRConnection.m */,
-				1F7E57571605F3DD001B0CD4 /* AVRConnection.h */,
+				1F9EE88716112FB5000796AC /* AVRConnect.framework */,
+				1F9EE88916112FB5000796AC /* UnitTests.octest */,
+				1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */,
 			);
-			name = AVRConnect;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +170,12 @@
 			mainGroup = 1F212CAF16055A3100CFCB8F;
 			productRefGroup = 1F212CBB16055A3100CFCB8F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1F9EE87F16112FB4000796AC /* Products */;
+					ProjectRef = 1F9EE87E16112FB4000796AC /* AVRConnect.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1F212CB916055A3100CFCB8F /* AVRTest */,
@@ -152,14 +183,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		1F9EE88716112FB5000796AC /* AVRConnect.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVRConnect.framework;
+			remoteRef = 1F9EE88616112FB5000796AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F9EE88916112FB5000796AC /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 1F9EE88816112FB5000796AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibAVRConnect.a;
+			remoteRef = 1F9EE89F161130C4000796AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F212CB616055A3100CFCB8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1F212CC216055A3100CFCB8F /* main.m in Sources */,
-				1F212CDC16055B9900CFCB8F /* AVRTest.m in Sources */,
-				1F7E57591605F3DD001B0CD4 /* AVRConnection.m in Sources */,
+				1F9EE8A2161131C8000796AC /* AVRTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +274,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../AVRConnect/AVRConnect;
 				INSTALL_PATH = /;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${PROJECT_NAME}";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -230,8 +286,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../AVRConnect/AVRConnect;
 				INSTALL_PATH = /;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${PROJECT_NAME}";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

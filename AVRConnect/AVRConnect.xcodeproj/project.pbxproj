@@ -12,6 +12,9 @@
 		1F212C891605573500CFCB8F /* AVRConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F212C881605573500CFCB8F /* AVRConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F212C8B1605573D00CFCB8F /* AVRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212C8A1605573D00CFCB8F /* AVRConnection.m */; };
 		1F212CD916055B5F00CFCB8F /* AVRConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F212CD816055B3000CFCB8F /* AVRConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F9EE89A16112FE3000796AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212C771605568500CFCB8F /* Foundation.framework */; };
+		1F9EE89B16112FFE000796AC /* AVRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212C8A1605573D00CFCB8F /* AVRConnection.m */; };
+		1F9EE89C16113004000796AC /* AVREvent.m.rl in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAC4C81607FBA6009A3A06 /* AVREvent.m.rl */; };
 		1FFAC4B71607FAB6009A3A06 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFAC4B61607FAB6009A3A06 /* SenTestingKit.framework */; };
 		1FFAC4B81607FAB6009A3A06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212C721605568500CFCB8F /* Cocoa.framework */; };
 		1FFAC4BE1607FAB6009A3A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAC4BC1607FAB6009A3A06 /* InfoPlist.strings */; };
@@ -22,6 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		1F9EE89D16113022000796AC /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.rl";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
+			);
+			script = "/usr/local/bin/ragel ${INPUT_FILE_DIR}/${INPUT_FILE_BASE}.rl -G2 -o ${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}";
+		};
 		1FFAC4AE1607F62E009A3A06 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
@@ -47,6 +61,7 @@
 		1F212C881605573500CFCB8F /* AVRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRConnection.h; sourceTree = "<group>"; };
 		1F212C8A1605573D00CFCB8F /* AVRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRConnection.m; sourceTree = "<group>"; };
 		1F212CD816055B3000CFCB8F /* AVRConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVRConnect.h; sourceTree = "<group>"; };
+		1F9EE88E16112FD4000796AC /* liblibAVRConnect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibAVRConnect.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFAC4B51607FAB6009A3A06 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFAC4B61607FAB6009A3A06 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1FFAC4BB1607FAB6009A3A06 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -64,6 +79,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F212C731605568500CFCB8F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F9EE88B16112FD4000796AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F9EE89A16112FE3000796AC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +118,7 @@
 			children = (
 				1F212C6F1605568500CFCB8F /* AVRConnect.framework */,
 				1FFAC4B51607FAB6009A3A06 /* UnitTests.octest */,
+				1F9EE88E16112FD4000796AC /* liblibAVRConnect.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F9EE88C16112FD4000796AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +227,24 @@
 			productName = AVRConnect;
 			productReference = 1F212C6F1605568500CFCB8F /* AVRConnect.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		1F9EE88D16112FD4000796AC /* libAVRConnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F9EE89816112FD4000796AC /* Build configuration list for PBXNativeTarget "libAVRConnect" */;
+			buildPhases = (
+				1F9EE88A16112FD4000796AC /* Sources */,
+				1F9EE88B16112FD4000796AC /* Frameworks */,
+				1F9EE88C16112FD4000796AC /* Headers */,
+			);
+			buildRules = (
+				1F9EE89D16113022000796AC /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = libAVRConnect;
+			productName = libAVRConnect;
+			productReference = 1F9EE88E16112FD4000796AC /* liblibAVRConnect.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		1FFAC4B41607FAB6009A3A06 /* UnitTests */ = {
 			isa = PBXNativeTarget;
@@ -221,7 +270,7 @@
 		1F212C651605568500CFCB8F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Jeff Hutchison";
 			};
 			buildConfigurationList = 1F212C681605568500CFCB8F /* Build configuration list for PBXProject "AVRConnect" */;
@@ -238,6 +287,7 @@
 			targets = (
 				1F212C6E1605568500CFCB8F /* AVRConnect */,
 				1FFAC4B41607FAB6009A3A06 /* UnitTests */,
+				1F9EE88D16112FD4000796AC /* libAVRConnect */,
 			);
 		};
 /* End PBXProject section */
@@ -284,6 +334,15 @@
 			files = (
 				1F212C8B1605573D00CFCB8F /* AVRConnection.m in Sources */,
 				1FFAC4CA1607FBA6009A3A06 /* AVREvent.m.rl in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F9EE88A16112FD4000796AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F9EE89B16112FFE000796AC /* AVRConnection.m in Sources */,
+				1F9EE89C16113004000796AC /* AVREvent.m.rl in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -379,6 +439,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -387,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -396,7 +458,34 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1F9EE89616112FD4000796AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRConnect/AVRConnect-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1F9EE89716112FD4000796AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRConnect/AVRConnect-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -443,6 +532,15 @@
 			buildConfigurations = (
 				1F212C851605568500CFCB8F /* Debug */,
 				1F212C861605568500CFCB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F9EE89816112FD4000796AC /* Build configuration list for PBXNativeTarget "libAVRConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F9EE89616112FD4000796AC /* Debug */,
+				1F9EE89716112FD4000796AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

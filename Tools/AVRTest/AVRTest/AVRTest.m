@@ -16,7 +16,6 @@
 // limitations under the License.
 
 #import "AVRTest.h"
-#import <AVRConnect/AVRConnect.h>
 
 @implementation AVRTest
 
@@ -29,12 +28,12 @@
 }
 
 - (void) start {
-    _connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(0, 0)];
-    [_connection connectToHost:self.host error:nil];
-    [_connection sendPowerQuery];
+    connection = [[AVRConnection alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(0, 0)];
+    [connection connectToHost:self.host error:nil];
+    [connection sendCommand:@"PW?" withInterval:30];
 }
 
-- (void) connection:(AVRConnection *)connection didReceiveEvent:(NSString *)event {
-    NSLog(@"event: %@", event);
+- (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {
+    NSLog(@"event: %@", event.rawEvent);
 }
 @end

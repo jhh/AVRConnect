@@ -18,6 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1F94524A161134A000332BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F9EE88E16112FD4000796AC;
+			remoteInfo = libAVRConnect;
+		};
 		1FA120D31605F8BB00642C3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
@@ -142,6 +149,7 @@
 			children = (
 				1FA120D41605F8BB00642C3E /* AVRConnect.framework */,
 				1FFAC4D61607FD71009A3A06 /* UnitTests.octest */,
+				1F94524B161134A000332BB6 /* liblibAVRConnect.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +208,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		1F94524B161134A000332BB6 /* liblibAVRConnect.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibAVRConnect.a;
+			remoteRef = 1F94524A161134A000332BB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1FA120D41605F8BB00642C3E /* AVRConnect.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -322,10 +337,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRConsole/AVRConsole-Prefix.pch";
 				INFOPLIST_FILE = "AVRConsole/AVRConsole-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -334,10 +351,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRConsole/AVRConsole-Prefix.pch";
 				INFOPLIST_FILE = "AVRConsole/AVRConsole-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
