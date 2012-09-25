@@ -272,24 +272,28 @@
 		1F212CCA16055A3100CFCB8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../../AVRConnect/AVRConnect;
 				INSTALL_PATH = /;
 				PRODUCT_NAME = "${PROJECT_NAME}";
 				USER_HEADER_SEARCH_PATHS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		1F212CCB16055A3100CFCB8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AVRTest/AVRTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../../AVRConnect/AVRConnect;
 				INSTALL_PATH = /;
 				PRODUCT_NAME = "${PROJECT_NAME}";
 				USER_HEADER_SEARCH_PATHS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
