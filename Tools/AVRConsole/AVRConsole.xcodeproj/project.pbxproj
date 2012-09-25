@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FA120B01605F6BB00642C3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA120AF1605F6BB00642C3E /* Cocoa.framework */; };
+		1FA120BA1605F6BB00642C3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FA120B81605F6BB00642C3E /* InfoPlist.strings */; };
+		1FA120BC1605F6BB00642C3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA120BB1605F6BB00642C3E /* main.m */; };
+		1FA120C01605F6BB00642C3E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1FA120BE1605F6BB00642C3E /* Credits.rtf */; };
+		1FA120C31605F6BB00642C3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA120C21605F6BB00642C3E /* AppDelegate.m */; };
+		1FA120C61605F6BB00642C3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA120C41605F6BB00642C3E /* MainMenu.xib */; };
+		1FA120D51605F8CC00642C3E /* AVRConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA120D41605F8BB00642C3E /* AVRConnect.framework */; };
+		1FA120D71605FA5F00642C3E /* AVRConnect.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA120D41605F8BB00642C3E /* AVRConnect.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F94524A161134A000332BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F9EE88E16112FD4000796AC;
+			remoteInfo = libAVRConnect;
+		};
+		1FA120D31605F8BB00642C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F212C6F1605568500CFCB8F;
+			remoteInfo = AVRConnect;
+		};
+		1FFAC4D51607FD71009A3A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FFAC4B51607FAB6009A3A06;
+			remoteInfo = UnitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FA120D61605FA4400642C3E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1FA120D71605FA5F00642C3E /* AVRConnect.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1FA120AB1605F6BB00642C3E /* AVRConsole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVRConsole.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA120AF1605F6BB00642C3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1FA120B21605F6BB00642C3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1FA120B31605F6BB00642C3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1FA120B41605F6BB00642C3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FA120B71605F6BB00642C3E /* AVRConsole-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AVRConsole-Info.plist"; sourceTree = "<group>"; };
+		1FA120B91605F6BB00642C3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FA120BB1605F6BB00642C3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1FA120BD1605F6BB00642C3E /* AVRConsole-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVRConsole-Prefix.pch"; sourceTree = "<group>"; };
+		1FA120BF1605F6BB00642C3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1FA120C11605F6BB00642C3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1FA120C21605F6BB00642C3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1FA120C51605F6BB00642C3E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVRConnect.xcodeproj; path = ../../AVRConnect/AVRConnect.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FA120A81605F6BB00642C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA120D51605F8CC00642C3E /* AVRConnect.framework in Frameworks */,
+				1FA120B01605F6BB00642C3E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FA120A01605F6BB00642C3E = {
+			isa = PBXGroup;
+			children = (
+				1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */,
+				1FA120B51605F6BB00642C3E /* AVRConsole */,
+				1FA120AE1605F6BB00642C3E /* Frameworks */,
+				1FA120AC1605F6BB00642C3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FA120AC1605F6BB00642C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120AB1605F6BB00642C3E /* AVRConsole.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FA120AE1605F6BB00642C3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120AF1605F6BB00642C3E /* Cocoa.framework */,
+				1FA120B11605F6BB00642C3E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FA120B11605F6BB00642C3E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120B21605F6BB00642C3E /* AppKit.framework */,
+				1FA120B31605F6BB00642C3E /* CoreData.framework */,
+				1FA120B41605F6BB00642C3E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1FA120B51605F6BB00642C3E /* AVRConsole */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120C11605F6BB00642C3E /* AppDelegate.h */,
+				1FA120C21605F6BB00642C3E /* AppDelegate.m */,
+				1FA120C41605F6BB00642C3E /* MainMenu.xib */,
+				1FA120B61605F6BB00642C3E /* Supporting Files */,
+			);
+			path = AVRConsole;
+			sourceTree = "<group>";
+		};
+		1FA120B61605F6BB00642C3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120B71605F6BB00642C3E /* AVRConsole-Info.plist */,
+				1FA120B81605F6BB00642C3E /* InfoPlist.strings */,
+				1FA120BB1605F6BB00642C3E /* main.m */,
+				1FA120BD1605F6BB00642C3E /* AVRConsole-Prefix.pch */,
+				1FA120BE1605F6BB00642C3E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FA120CD1605F8BA00642C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FA120D41605F8BB00642C3E /* AVRConnect.framework */,
+				1FFAC4D61607FD71009A3A06 /* UnitTests.octest */,
+				1F94524B161134A000332BB6 /* liblibAVRConnect.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FA120AA1605F6BB00642C3E /* AVRConsole */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA120C91605F6BB00642C3E /* Build configuration list for PBXNativeTarget "AVRConsole" */;
+			buildPhases = (
+				1FA120A71605F6BB00642C3E /* Sources */,
+				1FA120A81605F6BB00642C3E /* Frameworks */,
+				1FA120A91605F6BB00642C3E /* Resources */,
+				1FA120D61605FA4400642C3E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AVRConsole;
+			productName = AVRConsole;
+			productReference = 1FA120AB1605F6BB00642C3E /* AVRConsole.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FA120A21605F6BB00642C3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Jeff Hutchison";
+			};
+			buildConfigurationList = 1FA120A51605F6BB00642C3E /* Build configuration list for PBXProject "AVRConsole" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1FA120A01605F6BB00642C3E;
+			productRefGroup = 1FA120AC1605F6BB00642C3E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1FA120CD1605F8BA00642C3E /* Products */;
+					ProjectRef = 1FA120CC1605F8BA00642C3E /* AVRConnect.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1FA120AA1605F6BB00642C3E /* AVRConsole */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1F94524B161134A000332BB6 /* liblibAVRConnect.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibAVRConnect.a;
+			remoteRef = 1F94524A161134A000332BB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1FA120D41605F8BB00642C3E /* AVRConnect.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVRConnect.framework;
+			remoteRef = 1FA120D31605F8BB00642C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1FFAC4D61607FD71009A3A06 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 1FFAC4D51607FD71009A3A06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FA120A91605F6BB00642C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA120BA1605F6BB00642C3E /* InfoPlist.strings in Resources */,
+				1FA120C01605F6BB00642C3E /* Credits.rtf in Resources */,
+				1FA120C61605F6BB00642C3E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FA120A71605F6BB00642C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA120BC1605F6BB00642C3E /* main.m in Sources */,
+				1FA120C31605F6BB00642C3E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1FA120B81605F6BB00642C3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA120B91605F6BB00642C3E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1FA120BE1605F6BB00642C3E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA120BF1605F6BB00642C3E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1FA120C41605F6BB00642C3E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA120C51605F6BB00642C3E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FA120C71605F6BB00642C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1FA120C81605F6BB00642C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FA120CA1605F6BB00642C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRConsole/AVRConsole-Prefix.pch";
+				INFOPLIST_FILE = "AVRConsole/AVRConsole-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1FA120CB1605F6BB00642C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVRConsole/AVRConsole-Prefix.pch";
+				INFOPLIST_FILE = "AVRConsole/AVRConsole-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FA120A51605F6BB00642C3E /* Build configuration list for PBXProject "AVRConsole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA120C71605F6BB00642C3E /* Debug */,
+				1FA120C81605F6BB00642C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA120C91605F6BB00642C3E /* Build configuration list for PBXNativeTarget "AVRConsole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA120CA1605F6BB00642C3E /* Debug */,
+				1FA120CB1605F6BB00642C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FA120A21605F6BB00642C3E /* Project object */;
+}
