@@ -10,7 +10,7 @@
 		1F212CBF16055A3100CFCB8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F212CBE16055A3100CFCB8F /* Foundation.framework */; };
 		1F212CC216055A3100CFCB8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212CC116055A3100CFCB8F /* main.m */; };
 		1F212CC616055A3100CFCB8F /* AVRTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F212CC516055A3100CFCB8F /* AVRTest.1 */; };
-		1F9EE8A1161130C4000796AC /* liblibAVRConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */; };
+		1F9EE8A1161130C4000796AC /* libAVRConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9EE8A0161130C4000796AC /* libAVRConnect.a */; };
 		1F9EE8A2161131C8000796AC /* AVRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F212CDB16055B9900CFCB8F /* AVRTest.m */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F212CBF16055A3100CFCB8F /* Foundation.framework in Frameworks */,
-				1F9EE8A1161130C4000796AC /* liblibAVRConnect.a in Frameworks */,
+				1F9EE8A1161130C4000796AC /* libAVRConnect.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			children = (
 				1F9EE88716112FB5000796AC /* AVRConnect.framework */,
 				1F9EE88916112FB5000796AC /* UnitTests.octest */,
-				1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */,
+				1F9EE8A0161130C4000796AC /* libAVRConnect.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,10 +198,10 @@
 			remoteRef = 1F9EE88816112FB5000796AC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1F9EE8A0161130C4000796AC /* liblibAVRConnect.a */ = {
+		1F9EE8A0161130C4000796AC /* libAVRConnect.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = liblibAVRConnect.a;
+			path = libAVRConnect.a;
 			remoteRef = 1F9EE89F161130C4000796AC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
