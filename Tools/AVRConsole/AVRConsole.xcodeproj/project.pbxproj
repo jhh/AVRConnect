@@ -149,7 +149,7 @@
 			children = (
 				1FA120D41605F8BB00642C3E /* AVRConnect.framework */,
 				1FFAC4D61607FD71009A3A06 /* UnitTests.octest */,
-				1F94524B161134A000332BB6 /* liblibAVRConnect.a */,
+				1F94524B161134A000332BB6 /* libAVRConnect.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1F94524B161134A000332BB6 /* liblibAVRConnect.a */ = {
+		1F94524B161134A000332BB6 /* libAVRConnect.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libAVRConnect.a;

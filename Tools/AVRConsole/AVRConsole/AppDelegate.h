@@ -24,5 +24,6 @@
 - (IBAction)querySpeakerStatus:(id)sender;
 - (IBAction)querySpeakerChannelStatus:(id)sender;
 - (IBAction)sendCommand:(NSTextField *)sender;
+- (IBAction)saveDocument:(NSMenuItem *)sender;
 
 @end
