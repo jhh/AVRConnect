@@ -211,7 +211,7 @@
 		1F94524B161134A000332BB6 /* liblibAVRConnect.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = liblibAVRConnect.a;
+			path = libAVRConnect.a;
 			remoteRef = 1F94524A161134A000332BB6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
