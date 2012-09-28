@@ -22,8 +22,7 @@
     eventAttrs = @{ NSFontAttributeName : font };
     unknownEventAttrs = @{ NSFontAttributeName : font, NSForegroundColorAttributeName : [NSColor grayColor] };
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
 }
 
 - (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {
