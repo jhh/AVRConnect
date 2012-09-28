@@ -22,8 +22,7 @@
     eventAttrs = @{ NSFontAttributeName : font };
     unknownEventAttrs = @{ NSFontAttributeName : font, NSForegroundColorAttributeName : [NSColor grayColor] };
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
 }
 
 - (void) connection:(AVRConnection *)connection didReceiveEvent:(AVREvent *)event {
@@ -55,6 +54,24 @@
 
 - (IBAction)sendCommand:(NSTextField *)sender {
     [connection sendCommand:[sender stringValue]];
+}
+
+- (IBAction)saveDocument:(NSMenuItem *)sender {
+    NSString *name = @"AVR Console Output.txt";
+
+    // Set the default name for the file and show the panel.
+    NSSavePanel*    panel = [NSSavePanel savePanel];
+    [panel setNameFieldStringValue:name];
+    [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
+        if (result == NSFileHandlingPanelOKButton) {
+            NSURL*  theFile = [panel URL];
+            NSLog(@"FILE: %@", theFile);
+            NSTextStorage *text = self.textView.textStorage;
+            NSError *error;
+            [[text mutableString] writeToURL:theFile atomically:YES encoding:NSASCIIStringEncoding error:&error];
+        }
+    }];
+
 }
 
 @end
